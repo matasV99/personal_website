@@ -1,0 +1,119 @@
+baseURL = "www.matasvitkauskas.com"
+title = "Matas Vitkauskas"
+theme = "hugo-coder"
+languageCode = "en"
+defaultContentLanguage = "en"
+enableEmoji = true
+
+[pagination]
+pagerSize = 6
+
+[services]
+[services.disqus]
+# Enable Disqus comments
+# shortname = "yourdiscussshortname"
+
+[markup]
+[markup.highlight]
+noClasses = false
+
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+author = "Matas Vitkauskas"
+description = "Matas Vitkauskas' personal website"
+keywords = "blog,scientist,personal"
+info = ["PhD candidate in Human Genetics at McGill", "Neuroscience", "Bioinformatics", " ", "Email: matas[dot]vitkauskas[at]mail[dot]mcgill[dot]ca"]
+avatarURL = "images/MV_image.webp"
+dateFormat = "January 2, 2006"
+since = 2025
+
+rtl = false
+colorScheme = "auto"
+hideColorSchemeToggle = false
+# Series see also post count
+maxSeeAlsoItems = 5
+# Custom CSS
+customCSS = []
+# Custom SCSS, file path is relative to Hugo's asset folder (default: {your project root}/assets)
+customSCSS = []
+
+# Custom JS
+customJS = []
+
+# Custom remote JS files
+customRemoteJS = []
+
+[taxonomies]
+category = "categories"
+series = "series"
+tag = "tags"
+author = "authors"
+
+[[params.social]]
+name = "Github"
+icon = "fa-brands fa-github fa-2x"
+weight = 1
+url = "https://github.com/matasV99"
+
+[[params.social]]
+name = "X"
+icon = "fa-brands fa-x-twitter fa-2x"
+weight = 2
+url = "https://x.com/vitkauskasm"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "fa-brands fa-linkedin fa-2x"
+weight = 3
+url = "https://www.linkedin.com/in/matas-vitkauskas-383a73175/"
+
+[languages.en]
+languageName = "en"
+
+[[languages.en.menu.main]]
+name = "About"
+weight = 1
+url = "about/"
+
+[[languages.en.menu.main]]
+name = "Publications"
+weight = 2
+url = "publications/"
+
+[[languages.en.menu.main]]
+name  = "CV"
+url   = "http://localhost:1313/images/CV_MV.pdf"   # see note in §2
+weight = 3
+[languages.en.menu.main.params]
+target = "_blank"
+rel    = "noopener"
+
+[languages.lt]
+languageName = "lt"
+title = "Matas Vitkauskas"
+
+[languages.lt.params]
+author = "Matas Vitkauskas"
+info = ["Doktorantūros studentas Žmonių Genetikoje Magilio universitete","Neuromokslai", "Bioinformatika", " ", "El. paštas: matas[taškas]vitkauskas[eta]mail[taškas]mcgill[taškas]ca"]
+keywords = "blog,scientist,personal"
+
+[[languages.lt.menu.main]]
+name = "Apie mane"
+weight = 1
+url = "about/"
+
+[[languages.lt.menu.main]]
+name = "Publikacijos"
+weight = 2
+url = "publications/"
+
+[[languages.lt.menu.main]]
+name  = "CV"
+url   = "http://localhost:1313/images/CV_MV.pdf"   # see note in §2
+weight = 3
+[languages.lt.menu.main.params]
+target = "_blank"
+rel    = "noopener"
