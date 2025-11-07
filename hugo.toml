@@ -85,7 +85,7 @@ url = "publications/"
 
 [[languages.en.menu.main]]
 name  = "CV"
-url   = "http://localhost:1313/images/CV_MV.pdf"   # see note in §2
+url   = "http://matasvitkauskas.com/images/CV_MV.pdf" 
 weight = 3
 [languages.en.menu.main.params]
 target = "_blank"
@@ -112,7 +112,7 @@ url = "publications/"
 
 [[languages.lt.menu.main]]
 name  = "CV"
-url   = "http://localhost:1313/images/CV_MV.pdf"   # see note in §2
+url   = "http://matasvitkauskas.com/images/CV_MV.pdf" 
 weight = 3
 [languages.lt.menu.main.params]
 target = "_blank"
