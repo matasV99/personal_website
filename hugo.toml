@@ -1,5 +1,5 @@
 baseURL = "https://matasvitkauskas.com/"
-title = "Matas Vitkauskas – Human Genetics @ McGill"
+title = "Matas Vitkauskas"
 theme = "hugo-coder"
 languageCode = "en"
 defaultContentLanguage = "en"
@@ -31,7 +31,7 @@ unsafe = true
 author = "Matas Vitkauskas"
 description = "Matas Vitkauskas' personal website"
 keywords = "blog,scientist,personal"
-info = ["PhD candidate in Human Genetics at McGill", "Neuroscience", "Bioinformatics", " ", "Email: matas[dot]vitkauskas[at]mail[dot]mcgill[dot]ca"]
+info = ["PhD candidate at McGill", "Neuroscience", "Bioinformatics"]
 avatarURL = "images/MV_image.webp"
 dateFormat = "January 2, 2006"
 since = 2025
@@ -76,6 +76,12 @@ icon = "fa-brands fa-linkedin fa-2x"
 weight = 3
 url = "https://www.linkedin.com/in/matas-vitkauskas-383a73175/"
 
+[[params.social]]
+name  = "Google Scholar"
+icon  = "fa-brands fa-google-scholar fa-2x"
+weight = 4
+url   = "https://scholar.google.ca/citations?hl=en&user=lYuVw90AAAAJ"
+
 [languages.en]
 languageName = "en"
 
@@ -103,7 +109,7 @@ title = "Matas Vitkauskas"
 
 [languages.lt.params]
 author = "Matas Vitkauskas"
-info = ["Doktorantūros studentas Žmonių Genetikoje Magilio universitete","Neuromokslai", "Bioinformatika", " ", "El. paštas: matas[taškas]vitkauskas[eta]mail[taškas]mcgill[taškas]ca"]
+info = ["Doktorantūros studentas Žmonių Genetikoje Magilio universitete","Neuromokslai", "Bioinformatika"]
 keywords = "blog,scientist,personal"
 
 [[languages.lt.menu.main]]
