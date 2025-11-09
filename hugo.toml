@@ -31,7 +31,7 @@ unsafe = true
 author = "Matas Vitkauskas"
 description = "Matas Vitkauskas' personal website"
 keywords = "blog,scientist,personal"
-info = ["PhD candidate at McGill", "Neuroscience", "Bioinformatics"]
+info = ["PhD candidate at McGill", "Neuroscience", "Bioinformatics", " ", "matas.vitkauskas[at]mail.mcgill.ca"]
 avatarURL = "images/MV_image.webp"
 dateFormat = "January 2, 2006"
 since = 2025
@@ -109,7 +109,7 @@ title = "Matas Vitkauskas"
 
 [languages.lt.params]
 author = "Matas Vitkauskas"
-info = ["Doktorantūros studentas Žmonių Genetikoje Magilio universitete","Neuromokslai", "Bioinformatika"]
+info = ["Doktorantūros studentas Žmonių Genetikoje Magilio universitete","Neuromokslai", "Bioinformatika" , " ", "matas.vitkauskas[eta]mail.mcgill.ca"]
 keywords = "blog,scientist,personal"
 
 [[languages.lt.menu.main]]
