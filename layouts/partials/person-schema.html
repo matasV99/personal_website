@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"{{ .Site.Params.person.name | default "Matas Vitkauskas" }}",
+  "jobTitle":"{{ .Site.Params.person.jobTitle | default "PhD Student, Human Genetics" }}",
+  "affiliation":{"@type":"Organization","name":"{{ .Site.Params.person.affiliation | default "McGill University" }}"},
+  "url":"{{ .Site.BaseURL }}",
+  "sameAs":[
+    {{ with .Site.Params.person.sameAs -}}
+      {{ delimit . "\",\n    \"" | printf "\"%s\"" }}
+    {{- end }}
+  ]
+}
+</script>

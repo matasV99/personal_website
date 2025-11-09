@@ -1,9 +1,15 @@
 baseURL = "https://matasvitkauskas.com/"
-title = "Matas Vitkauskas"
+title = "Matas Vitkauskas – Human Genetics @ McGill"
 theme = "hugo-coder"
 languageCode = "en"
 defaultContentLanguage = "en"
 enableEmoji = true
+
+[params.person]
+name = "Matas Vitkauskas"
+jobTitle = "PhD Student, Human Genetics"
+affiliation = "McGill University"
+sameAs = ["https://github.com/matasV99", "https://scholar.google.ca/citations?hl=en&user=lYuVw90AAAAJ", "https://orcid.org/0000-0003-3288-3445", "https://www.linkedin.com/in/matas-vitkauskas-383a73175/", "https://x.com/vitkauskasm"]
 
 [pagination]
 pagerSize = 6
@@ -117,3 +123,4 @@ weight = 3
 [languages.lt.menu.main.params]
 target = "_blank"
 rel    = "noopener"
+
