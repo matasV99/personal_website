@@ -1,1 +1,58 @@
-matasvitkauskas.com
+#!/bin/bash
+#SBATCH --job-name=Trimmomatic_emseq
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64G
+#SBATCH --time=144:00:00
+#SBATCH --output=trimmomatic_emseq_2_%j.out
+#SBATCH --error=trimmomatic_emseq_2_%j.err
+#SBATCH --mail-user=matas.vit@gmail.com
+#SBATCH --mail-type=ALL
+
+module load trimmomatic/0.39
+
+source "$HOME/miniconda3/etc/profile.d/conda.sh"
+conda activate rnaseq
+# this is to load cutadapt
+
+FASTQ_DIR="/home/matasv99/links/projects/rrg-gturecki/raw_files/20201116_DanielAlmeida_EMSeq"
+OUTPUT="/home/matasv99/links/scratch/emseq_trim"
+ADAPTERS="/home/matasv99/NEBNext_PE.fa"
+# https://www.biostars.org/p/349635/
+# https://www.neb.com/en-ca/faqs/2021/01/15/what-sequences-need-to-be-trimmed-for-nebnext-libraries-that-are-sequenced-on-an-illumina-instrument
+
+mkdir -p "$OUTPUT"
+
+for R1 in "$FASTQ_DIR"/*_R1.fastq.gz; do
+
+  R2="${R1/_R1.fastq.gz/_R2.fastq.gz}"
+  SAMPLE="$(basename "${R1%_R1.fastq.gz}")"
+
+  echo "Sample: $SAMPLE"
+  echo "  R1: $R1"
+  echo "  R2: $R2"
+  echo
+
+ # if final outputs exist and are non-empty, skip whole sample
+  if [ -s "$R1_FINAL" ] && [ -s "$R2_FINAL" ]; then
+    echo "  [SKIP] Final trimmed files already present."
+    continue
+  fi
+
+  # Run Cutadapt to trim poly-A/T tails
+  # and first 10 basepairs from 5' and 3' end https://felixkrueger.github.io/Bismark/bismark/library_types/
+  cutadapt -j 16 -a A{10} -A A{10} -a T{10} -A T{10} -m 36 -o "$OUTPUT/${SAMPLE}_R1.trim.fastq.gz" -p "$OUTPUT/${SAMPLE}_R2.trim.fastq.gz" "$R1" "$R2"
+
+  # trim ≥10 A's at 3′ of each read
+  # and ≥10 T's (useful for bisulfite protocols)
+
+  # Run Trimmomatic (paired-end)
+  java -jar /cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Core/trimmomatic/0.39/trimmomatic-0.39.jar \
+    PE -threads 16 -phred33 \
+    "$OUTPUT/${SAMPLE}_R1.trim.fastq.gz" \
+    "$OUTPUT/${SAMPLE}_R2.trim.fastq.gz" \
+    "$OUTPUT/${SAMPLE}_R1.final.fastq.gz" /dev/null \
+    "$OUTPUT/${SAMPLE}_R2.final.fastq.gz" /dev/null \
+    ILLUMINACLIP:"$ADAPTERS":2:30:10:2:True \
+    SLIDINGWINDOW:4:20 \
+    MINLEN:36
+done
