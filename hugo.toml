@@ -109,7 +109,7 @@ title = "Matas Vitkauskas"
 
 [languages.lt.params]
 author = "Matas Vitkauskas"
-info = ["Doktorantūros studentas Žmonių Genetikoje Magilio universitete","Neuromokslai", "Bioinformatika" , " ", "matas.vitkauskas[eta]mail.mcgill.ca"]
+info = ["Doktorantūros studentas McGill universitete","Neuromokslai", "Bioinformatika" , " ", "matas.vitkauskas[eta]mail.mcgill.ca"]
 keywords = "blog,scientist,personal"
 
 [[languages.lt.menu.main]]
