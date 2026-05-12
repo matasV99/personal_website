@@ -1,7 +1,7 @@
 baseURL = "https://matasvitkauskas.com/"
 title = "Matas Vitkauskas"
 theme = "hugo-coder"
-languageCode = "en"
+locale = "en"
 defaultContentLanguage = "en"
 enableEmoji = true
 
@@ -83,7 +83,7 @@ weight = 4
 url   = "https://scholar.google.ca/citations?hl=en&user=lYuVw90AAAAJ"
 
 [languages.en]
-languageName = "en"
+label = "en"
 
 [[languages.en.menu.main]]
 name = "About"
@@ -104,7 +104,7 @@ target = "_blank"
 rel    = "noopener"
 
 [languages.lt]
-languageName = "lt"
+label = "lt"
 title = "Matas Vitkauskas"
 
 [languages.lt.params]
